@@ -1,32 +1,43 @@
-# Mineradio 修改说明
+# Mineradio Modification Notes
 
-本项目基于原开源项目 `XxHuberrr/Mineradio` 修改，原项目采用 GPL-3.0 协议发布。
+This project is a modified version of the original open-source project
+`XxHuberrr/Mineradio`. The original project is released under the GPL-3.0
+license. This modified version keeps the original license and copyright notices.
 
-## 版权与协议说明
+## Copyright And License
 
-- 保留原项目的 `LICENSE`、`NOTICE.md`、`README.md` 等版权和协议文件。
-- 本修改版继续遵循 GPL-3.0 协议发布。
-- 修改版源码公开时，应说明原项目来源，并标明本仓库为二次修改版本。
-- 本项目不内置第三方音乐平台的付费、破解或绕过版权限制功能，仅用于学习、研究和界面功能扩展。
+- The original `LICENSE`, `README.md`, and attribution information should be kept.
+- This repository should be published as a modified version based on
+  `XxHuberrr/Mineradio`.
+- This modification does not include DRM bypassing, paid-feature cracking, or
+  copyright circumvention.
+- The project is intended for learning, research, UI customization, and feature
+  extension.
 
-## 本次修改内容
+## Main Changes
 
-1. 新增酷狗音乐登录同步基础框架。
-   - 增加酷狗音乐网页登录窗口。
-   - 增加酷狗登录 cookie 的本地保存与清除。
-   - 增加 `/api/kugou/login/status`、`/api/kugou/login/cookie`、`/api/kugou/logout` 接口。
-   - 前端登录弹窗新增“酷狗音乐”入口。
+1. Added Kugou Music account session support.
+   - Added Kugou cookie/session storage.
+   - Added Kugou login status, cookie import, and logout routes.
+   - Added `/api/kugou/user/playlists` for user playlist synchronization.
+   - Added `/api/kugou/playlist/tracks` for playlist track loading.
+   - Added `/api/kugou/song/url` for resolving playable song URLs when possible.
 
-2. 优化播放列表滚动条样式。
-   - 左侧播放列表面板增加透明玻璃感滚动条。
-   - 底部小播放队列同步使用透明滚动条。
+2. Added Kugou Music as a third source in the player UI.
+   - Added Kugou login tab and account switching entry.
+   - Added Kugou playlist group in the playlist panel.
+   - Added `KG` source tags for Kugou songs.
+   - Added Kugou playlist loading and queue playback support.
 
-3. 扩展前端账号状态显示。
-   - 右上角账号状态支持显示酷狗音乐登录状态。
-   - 支持酷狗音乐手动导入 cookie 会话。
-   - 支持退出酷狗音乐网页登录会话。
+3. Improved playlist scrolling style.
+   - Added a more transparent, glass-like scrollbar style for the playlist area.
 
-## 注意事项
+## Important Notes
 
-酷狗音乐网页登录同步目前是基础接入框架，主要完成登录状态保存和前端入口展示。由于酷狗音乐接口并非稳定公开接口，后续若继续接入搜索、歌单、播放等功能，需要遵守平台规则和版权要求。
+Kugou Music does not provide a stable public API for all personal music data.
+This modification uses the saved login session and compatible web/mobile
+endpoints when possible. If Kugou changes its service behavior, some playlists
+may fail to load or some songs may not be playable.
 
+Please do not use this project to infringe music platform copyrights or bypass
+paid access restrictions.
